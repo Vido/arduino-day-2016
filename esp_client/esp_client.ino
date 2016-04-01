@@ -1,5 +1,4 @@
 #include <DHT.h>
-#include <SoftwareSerial.h>
 #include <ESP8266.h>
 #include "simple_http.h"
 
@@ -31,9 +30,9 @@ void loop()
 
   // Builds the HTTP package
   char json_payload[64]="";
-  char tcp_payload[HTTP_PAYLOAD_SIZE]="";
+  char tcp_payload[256]="";
   dht_json_wrapper(json_payload, 64, humidity, temperature);
-  http_wrapper(tcp_payload, HTTP_PAYLOAD_SIZE, json_payload, strlen(json_payload));
+  http_wrapper(tcp_payload, 256, json_payload, strlen(json_payload));
 
   // Joins the AP
   bool joinap_error = wifi.joinAP(SSID, PASSWD);
