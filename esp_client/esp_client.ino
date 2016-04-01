@@ -32,7 +32,7 @@ void loop()
   // Builds the HTTP package
   char json_payload[64]="";
   char tcp_payload[HTTP_PAYLOAD_SIZE]="";
-  dht_json_wrapper(json_payload, 64, dht.getHumidity(), dht.getTemperature());
+  dht_json_wrapper(json_payload, 64, humidity, temperature);
   http_wrapper(tcp_payload, HTTP_PAYLOAD_SIZE, json_payload, strlen(json_payload));
 
   // Joins the AP
