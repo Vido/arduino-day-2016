@@ -1,4 +1,5 @@
 #define HTTP_PAYLOAD_SIZE 256
+#define JSON_PAYLOAD_SIZE 64
 
 bool dht_json_wrapper(char *json_payload,
                                   const uint8_t len_json_payload,
