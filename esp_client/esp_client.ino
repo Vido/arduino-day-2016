@@ -42,8 +42,8 @@ void loop()
   }
 
   // Sends data
-  bool tcp_error = wifi.createTCP(IPADDR, TCPPORT);
   // Create TCP connection in single mode.
+  wifi.createTCP(IPADDR, TCPPORT);
   // Casting is needed
   wifi.send((uint8_t *)tcp_payload, (uint32_t) strlen(tcp_payload));
   wifi.releaseTCP();
